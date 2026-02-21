@@ -6,6 +6,10 @@ from app import classify_headline, ModelRequest, ModelResponse
 app = FastAPI()
 logging.basicConfig(level=logging.INFO)
 
+@app.get("/")
+def root():
+    return {"message": "Finance Text Classifier API"}
+    
 @app.get("/health")
 async def health_check():
     return {"status": "ok"}
